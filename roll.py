@@ -20,7 +20,7 @@ def roll_die(die):
 
 def restart():
     """Determine whether to exit or not."""
-    quit = raw_input('Enter to roll again, type exit to quit.\n>')
+    quit = raw_input('\nEnter to roll again, type exit to quit.\n>')
     if quit == 'exit':
         exit()
     elif quit == '':
@@ -40,8 +40,8 @@ def main():
 
         rolls = []
    
-        for i in num_of_dice:
-            rolls.append(roll_die(num_of_sides))
+        for i in xrange(int(num_of_dice)):
+            rolls.append(roll_die(int(num_of_sides)))
 
         for roll in rolls:
             print roll,
