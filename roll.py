@@ -1,5 +1,5 @@
 from random import randint
-from sys import argv
+from sys import argv, exit
 
 
 def get_cl_args():
@@ -18,9 +18,16 @@ def roll(die):
     return roll
 
 
-
-def restart(state_list):
-    pass
+def restart():
+    """Determine whether to exit or not."""
+    quit = raw_input('Enter to roll again, type exit to quit.\n>')
+    if quit == exit:
+        sys.exit()
+    elif quit == '':
+        pass
+    else:
+        print '\n'
+        restart()
 
 
 def main(num_of_die):
