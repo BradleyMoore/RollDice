@@ -43,6 +43,8 @@ def main():
     num_of_dice = dice[0]
     num_of_sides = dice[1]
  
+    print '\n'
+
     while True:
 
         rolls = []
