@@ -12,7 +12,10 @@ def get_cl_args():
 
 
 def roll(die):
-    pass
+    """Input int and return int."""
+    roll = randint(1, die)
+
+    return roll
 
 
 
