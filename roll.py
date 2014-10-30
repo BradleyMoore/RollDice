@@ -11,9 +11,9 @@ def get_cl_args():
     return dice
 
 
-def roll(die):
+def roll_die(die):
     """Input int and return int."""
-    roll = randint(1, die)
+    roll = randint(1, int(die))
 
     return roll
 
@@ -22,9 +22,9 @@ def restart():
     """Determine whether to exit or not."""
     quit = raw_input('Enter to roll again, type exit to quit.\n>')
     if quit == 'exit':
-        return False
+        exit()
     elif quit == '':
-        return True
+        print '\n'
     else:
         print '\n'
         restart()
@@ -32,22 +32,21 @@ def restart():
 
 def main():
     """Do everything."""
-    play = True
-    if dice == None:
-        dice = get_cl_arguments()
-
-    while != False:
+    dice = get_cl_args()
+    num_of_dice = dice[0]
+    num_of_sides = dice[1]
+ 
+    while True:
 
         rolls = []
-        num_of_dice = dice[0]
-        num_of_sides = dice[1]
-    
+   
         for i in num_of_dice:
-            rolls.append(roll(num_of_sides))
+            rolls.append(roll_die(num_of_sides))
 
-        print rolls
+        for roll in rolls:
+            print roll,
 
-        play = restart()
+        restart()
 
 
 if __name__ == '__main__':
