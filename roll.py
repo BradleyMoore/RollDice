@@ -7,7 +7,7 @@ def get_cl_args():
     try:
         int(argv[1])
         int(argv[2])
-    except ValueError:
+    except (ValueError, IndexError) as e:
         print 'Please type 2 command line integers.'
         exit()
 
