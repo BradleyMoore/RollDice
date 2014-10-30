@@ -4,6 +4,13 @@ from sys import argv, exit
 
 def get_cl_args():
     """Call 2 cl arguments and return tuple."""
+    try:
+        int(argv[1])
+        int(argv[2])
+    except ValueError:
+        print 'Please type 2 command line integers.'
+        exit()
+
     num_of_dice = argv[1]
     sides_per_die = argv[2]
 
