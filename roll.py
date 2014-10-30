@@ -21,19 +21,35 @@ def roll(die):
 def restart():
     """Determine whether to exit or not."""
     quit = raw_input('Enter to roll again, type exit to quit.\n>')
-    if quit == exit:
-        sys.exit()
+    if quit == 'exit':
+        return False
     elif quit == '':
-        pass
+        return True
     else:
         print '\n'
         restart()
 
 
-def main(num_of_die):
-    pass
+def main():
+    """Do everything."""
+    play = True
+    if dice == None:
+        dice = get_cl_arguments()
+
+    while != False:
+
+        rolls = []
+        num_of_dice = dice[0]
+        num_of_sides = dice[1]
+    
+        for i in num_of_dice:
+            rolls.append(roll(num_of_sides))
+
+        print rolls
+
+        play = restart()
 
 
-while __name__ == '__main__':
-    pass
+if __name__ == '__main__':
+    main()
 
