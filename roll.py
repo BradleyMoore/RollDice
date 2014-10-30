@@ -3,7 +3,12 @@ from sys import argv
 
 
 def get_cl_args():
-    pass
+    """Call 2 cl arguments and return tuple."""
+    num_of_dice = argv[1]
+    sides_per_die = argv[2]
+
+    dice = (num_of_dice, sides_per_die)
+    return dice
 
 
 def roll(die):
