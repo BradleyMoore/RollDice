@@ -37,27 +37,24 @@ def restart():
         restart()
 
 
-def main():
-    """Do everything."""
-    dice = get_cl_args()
+def main(dice):
+    """Input len 2 list of ints and return list of resultant ints."""
     num_of_dice = dice[0]
     num_of_sides = dice[1]
  
-    print '\n'
-
-    while True:
-
-        rolls = []
+    rolls = []
    
-        for i in xrange(int(num_of_dice)):
-            rolls.append(roll_die(int(num_of_sides)))
+    for i in xrange(int(num_of_dice)):
+        rolls.append(roll_die(int(num_of_sides)))
 
-        for roll in rolls:
-            print roll,
-
-        restart()
+    return rolls
 
 
-if __name__ == '__main__':
-    main()
+while __name__ == '__main__':
+    dice = get_cl_args()
+    print '\n'
+    rolls = main(dice)
+    for roll in rolls:
+        print roll,
+    restart()
 
